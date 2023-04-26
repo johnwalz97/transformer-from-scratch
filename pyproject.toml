@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "transformer-from-scratch"
+version = "0.1.0"
+description = ""
+authors = ["John Walz <johnwalz97@gmail.com>"]
+readme = "README.md"
+packages = [{include = "transformer_from_scratch"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.24.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+ruff = "^0.0.263"
+isort = "^5.12.0"
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

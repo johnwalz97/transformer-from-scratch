@@ -1,0 +1,5 @@
+# git ignore all python artifacts
+*.pyc
+*.pyo
+*.pyd
+__pycache__
