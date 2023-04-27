@@ -9,6 +9,8 @@ packages = [{include = "transformer_from_scratch"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 numpy = "^1.24.3"
+torch = "^2.0.0"
+torchtext = "^0.15.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"

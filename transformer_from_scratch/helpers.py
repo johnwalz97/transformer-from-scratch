@@ -25,7 +25,7 @@ def tokenize(text: str):
     """
     return re.findall(r'\w+|[^\w\s]', text, re.UNICODE)
 
-def create_vocabulary(tokens: list):
+def create_vocabulary(tokens: list) -> tuple:
     """Create vocabulary from list of tokens
 
     Args:
@@ -33,13 +33,16 @@ def create_vocabulary(tokens: list):
     Returns:
         (dict): vocabulary
     """
-    vocab = set(tokens)
-    token_to_idx = {token: idx for idx, token in enumerate(vocab)}
-    idx_to_token = {idx: token for idx, token in enumerate(vocab)}
-    return vocab, token_to_idx, idx_to_token
+    vocab = sorted(set(tokens))
+
+    return (
+        vocab,
+        {token: idx for idx, token in enumerate(vocab)},
+        {idx: token for idx, token in enumerate(vocab)},
+    )
 
 
-def text_to_indices(text: str, token_to_idx: dict):
+def text_to_indices(text: str, token_to_idx: dict) -> np.ndarray:
     """Convert text to indices
 
     Args:
